@@ -40,7 +40,7 @@ if (hasInterface) then {
         if ((isPlayer _person) && {CBA_missionTime > 0} && {getNumber (configOf _person >> "isPlayableLogic") != 1}) then {
             if (_sentenceType == 0) exitWith {}; // probably a scripted `globalChat` or `sideChat` message
             if ((_text select [0,5]) == "force") then {
-                // _returnValue = _text select [5]; // optionally clean up text
+                _returnValue = _text select [5]; // optionally clean up text
             } else {
                 INFO_2("hiding player chat [%1: %2]",_name,_text);
                 _returnValue = true; // block
